@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>החברה שגורמת לבנקים לחשוש | כלכלה 24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Assistant', sans-serif; background: #f5f5f5; color: #1a1a1a; direction: rtl; }
+  .site { background: #fff; max-width: 680px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
+
+  /* Header */
+  .topbar { border-bottom: 2px solid #e0e0e0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; background: #fff; position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 22px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px; text-decoration: none; }
+  .logo span { color: #d32f2f; }
+  .nav { display: flex; gap: 18px; }
+  .nav a { font-size: 14px; color: #444; text-decoration: none; font-weight: 500; }
+  .nav a:hover { color: #d32f2f; }
+
+  .breadcrumb { padding: 10px 20px; font-size: 13px; color: #999; border-bottom: 1px solid #f0f0f0; background: #fafafa; }
+  .breadcrumb a { color: #999; text-decoration: none; }
+
+  /* Article */
+  .article { padding: 24px 20px; }
+  .tag { font-size: 12px; font-weight: 700; color: #d32f2f; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: inline-block; }
+  h1 { font-size: 26px; font-weight: 700; line-height: 1.35; color: #111; margin-bottom: 12px; }
+  .subtitle { font-size: 18px; color: #555; font-weight: 400; line-height: 1.5; margin-bottom: 16px; border-right: 3px solid #e0e0e0; padding-right: 14px; }
+
+  .byline { font-size: 13px; color: #999; margin-bottom: 18px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .byline .author { font-weight: 600; color: #555; }
+  .byline .sep { color: #ddd; }
+
+  .hero-img { width: 100%; border-radius: 4px; display: block; }
+  .caption { font-size: 12px; color: #aaa; margin-bottom: 20px; line-height: 1.5; padding-top: 6px; }
+
+  p { font-size: 17px; line-height: 1.75; color: #222; margin-bottom: 16px; font-weight: 400; }
+
+  .highlight { background: #fff3e0; border-right: 4px solid #f57c00; padding: 14px 16px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+  .highlight p { margin: 0; font-size: 16px; font-weight: 600; color: #333; }
+
+  /* Stats strip */
+  .stats { display: flex; gap: 0; margin: 24px 0; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+  .stat { flex: 1; text-align: center; padding: 16px 8px; border-left: 1px solid #eee; }
+  .stat:last-child { border-left: none; }
+  .stat .num { font-size: 24px; font-weight: 700; color: #d32f2f; line-height: 1; }
+  .stat .lbl { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.3; }
+
+  /* Quote */
+  .quote-box { border-right: 4px solid #222; padding: 12px 16px; margin: 20px 0; background: #fafafa; border-radius: 0 6px 6px 0; }
+  .quote-box blockquote { font-size: 16px; font-style: italic; color: #333; margin-bottom: 6px; line-height: 1.6; }
+  .quote-box .attr { font-size: 13px; color: #888; font-style: normal; font-weight: 600; }
+
+  /* Bank fear box */
+  .bank-box { background: #ffeef0; border: 1.5px solid #ffcdd2; border-radius: 8px; padding: 16px 18px; margin: 20px 0; }
+  .bank-box .bank-title { font-size: 14px; font-weight: 700; color: #c62828; margin-bottom: 8px; }
+  .bank-box p { margin: 0; font-size: 15px; color: #555; }
+
+  /* Lead form */
+  .lead-form { background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); border: 1.5px solid #c5d0f5; border-radius: 12px; padding: 24px 20px; margin: 28px 0; }
+  .lead-form h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #111; line-height: 1.3; }
+  .lead-form .sub { font-size: 14px; color: #777; margin-bottom: 18px; line-height: 1.6; }
+
+  /* Radio buttons */
+  .radio-group { display: flex; gap: 10px; margin-bottom: 16px; }
+  .radio-opt { flex: 1; border: 1.5px solid #ddd; border-radius: 8px; padding: 10px 8px; text-align: center; cursor: pointer; font-size: 14px; font-weight: 500; color: #555; transition: all 0.2s; background: #fff; }
+  .radio-opt.active { border-color: #1a3fcb; background: #eef1ff; color: #1a3fcb; font-weight: 700; }
+
+  .field { margin-bottom: 12px; }
+  .field input { width: 100%; padding: 13px 16px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 16px; font-family: 'Assistant', sans-serif; background: #fff; color: #111; outline: none; transition: border-color 0.2s; }
+  .field input:focus { border-color: #1a3fcb; }
+
+  .cta-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%); color: #fff; border: none; border-radius: 8px; font-size: 19px; font-weight: 700; font-family: 'Assistant', sans-serif; cursor: pointer; transition: opacity 0.2s; margin-top: 4px; letter-spacing: 0.3px; }
+  .cta-btn:hover { opacity: 0.92; }
+  .disclaimer { font-size: 12px; color: #bbb; text-align: center; margin-top: 10px; line-height: 1.5; }
+
+  /* Success */
+  .success { display: none; background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 28px 20px; text-align: center; margin: 28px 0; }
+  .success h3 { color: #2e7d32; font-size: 20px; margin-bottom: 8px; }
+  .success p { color: #388e3c; font-size: 15px; margin: 0; }
+
+  .footer-note { font-size: 12px; color: #ccc; text-align: center; padding: 20px; border-top: 1px solid #f0f0f0; background: #fafafa; }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 22px; }
+    .stat .num { font-size: 20px; }
+    .nav { gap: 12px; }
+    .radio-group { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+
+  <div class="topbar">
+    <a href="#" class="logo">כלכלה<span>24</span></a>
+    <div class="nav"><a href="#">נדלן</a><a href="#">כלכלה</a><a href="#">שוק ההון</a></div>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="#">ראשי</a> &rsaquo; <a href="#">כלכלה</a> &rsaquo; <a href="#">פינטק</a>
+  </div>
+
+  <div class="article">
+    <div class="tag">פינטק</div>
+
+    <h1>החברה הישראלית שגורמת לבנקים לחשוש: "הלקוחות שלנו חוסכים אלפי שקלים בחודש"</h1>
+
+    <div class="subtitle">מנגנון AI חדש מנתח את תנאי המשכנתא שלך ומוצא בשניות כמה הבנק גובה ממך יותר מדי</div>
+
+    <div class="byline">
+      <span class="author">מיכל רוזן</span><span class="sep">|</span>
+      <span>22.5.2026</span><span class="sep">|</span>
+      <span>4 דקות קריאה</span>
+    </div>
+
+    <img class="hero-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwYTE2MjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEyZjUwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnbG93IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwZDRmZjtzdG9wLW9wYWNpdHk6MC4zIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwNjZmZjtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICAKICA8IS0tIERhcmsgdGVjaCBiYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnMikiLz4KICAKICA8IS0tIEdyaWQgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjAiIHkxPSI4MCIgeDI9IjgwMCIgeTI9IjgwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC4zIiBvcGFjaXR5PSIwLjEiLz4KICA8bGluZSB4MT0iMCIgeTE9IjE2MCIgeDI9IjgwMCIgeTI9IjE2MCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjAuMyIgb3BhY2l0eT0iMC4xIi8+CiAgPGxpbmUgeDE9IjAiIHkxPSIyNDAiIHgyPSI4MDAiIHkyPSIyNDAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIwLjMiIG9wYWNpdHk9IjAuMSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iMzIwIiB4Mj0iODAwIiB5Mj0iMzIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC4zIiBvcGFjaXR5PSIwLjEiLz4KICA8bGluZSB4MT0iMTYwIiB5MT0iMCIgeDI9IjE2MCIgeTI9IjQwMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjAuMyIgb3BhY2l0eT0iMC4xIi8+CiAgPGxpbmUgeDE9IjMyMCIgeTE9IjAiIHgyPSIzMjAiIHkyPSI0MDAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIwLjMiIG9wYWNpdHk9IjAuMSIvPgogIDxsaW5lIHgxPSI0ODAiIHkxPSIwIiB4Mj0iNDgwIiB5Mj0iNDAwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMC4zIiBvcGFjaXR5PSIwLjEiLz4KICA8bGluZSB4MT0iNjQwIiB5MT0iMCIgeDI9IjY0MCIgeTI9IjQwMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjAuMyIgb3BhY2l0eT0iMC4xIi8+CiAgCiAgPCEtLSBBSSBHcmFwaCAvIGNoYXJ0IHZpc3VhbGl6YXRpb24gLS0+CiAgPCEtLSBCYXIgY2hhcnQgZ29pbmcgdXAgLS0+CiAgPHJlY3QgeD0iODAiIHk9IjI4MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjgwIiByeD0iMyIgZmlsbD0iIzFlODhlNSIgb3BhY2l0eT0iMC43Ii8+CiAgPHJlY3QgeD0iMTQwIiB5PSIyNDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMjAiIHJ4PSIzIiBmaWxsPSIjMWU4OGU1IiBvcGFjaXR5PSIwLjc1Ii8+CiAgPHJlY3QgeD0iMjAwIiB5PSIyMDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNjAiIHJ4PSIzIiBmaWxsPSIjMWU4OGU1IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSIyNjAiIHk9IjE1MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIxMCIgcng9IjMiIGZpbGw9IiMwMGJjZDQiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIzMjAiIHk9IjEwMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjI2MCIgcng9IjMiIGZpbGw9IiMwMGJjZDQiIG9wYWNpdHk9IjAuOSIvPgogIDxyZWN0IHg9IjM4MCIgeT0iNjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIzMDAiIHJ4PSIzIiBmaWxsPSIjMDBlNWZmIiBvcGFjaXR5PSIwLjk1Ii8+CiAgCiAgPCEtLSBEb3dud2FyZCByZWQgYmFyIGZvciBiYW5rcyAtLT4KICA8cmVjdCB4PSI1MDAiIHk9IjE2MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwMCIgcng9IjMiIGZpbGw9IiNlZjUzNTAiIG9wYWNpdHk9IjAuOCIvPgogIDxyZWN0IHg9IjU2MCIgeT0iMjAwIiB3aWR0aD0iNDAiIGhlaWdodD0iMTYwIiByeD0iMyIgZmlsbD0iI2VmNTM1MCIgb3BhY2l0eT0iMC43NSIvPgogIDxyZWN0IHg9IjYyMCIgeT0iMjUwIiB3aWR0aD0iNDAiIGhlaWdodD0iMTEwIiByeD0iMyIgZmlsbD0iI2VmNTM1MCIgb3BhY2l0eT0iMC43Ii8+CiAgPHJlY3QgeD0iNjgwIiB5PSIzMDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI2MCIgcng9IjMiIGZpbGw9IiNlZjUzNTAiIG9wYWNpdHk9IjAuNjUiLz4KICAKICA8IS0tIERpdmlkZXIgbGluZSAtLT4KICA8bGluZSB4MT0iNDYwIiB5MT0iNDAiIHgyPSI0NjAiIHkyPSIzODAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYsNCIvPgogIAogIDwhLS0gTGFiZWxzIC0tPgogIDx0ZXh0IHg9IjIzMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzAwZTVmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPteX15nXodeb15XXnyDXnNec16fXldeX15XXqjwvdGV4dD4KICA8dGV4dCB4PSIyMzAiIHk9IjcyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMwMGJjZDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPiszMjAlIFlvWTwvdGV4dD4KICAKICA8dGV4dCB4PSI2MDAiIHk9IjE0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiBmaWxsPSIjZWY1MzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+15TXm9eg16HXldeqINeR16DXp9eZ1508L3RleHQ+CiAgPHRleHQgeD0iNjAwIiB5PSIxNjIiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2U1NzM3MyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+LTE4JSBZb1k8L3RleHQ+CiAgCiAgPCEtLSBBSSBjaXJjdWl0IG5vZGVzIC0tPgogIDxjaXJjbGUgY3g9IjEzMCIgY3k9IjE4MCIgcj0iNiIgZmlsbD0iIzAwZTVmZiIgb3BhY2l0eT0iMC45Ii8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTQwIiByPSI0IiBmaWxsPSIjMDBiY2Q0IiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIyODAiIGN5PSIxNjUiIHI9IjUiIGZpbGw9IiMwMGU1ZmYiIG9wYWNpdHk9IjAuOCIvPgogIDxsaW5lIHgxPSIxMzAiIHkxPSIxODAiIHgyPSIyMDAiIHkyPSIxNDAiIHN0cm9rZT0iIzAwYmNkNCIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iMjAwIiB5MT0iMTQwIiB4Mj0iMjgwIiB5Mj0iMTY1IiBzdHJva2U9IiMwMGJjZDQiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC40Ii8+CiAgCiAgPCEtLSBGbG9hdGluZyBudW1iZXJzIChBSSBhbmFseXNpcyBmZWVsKSAtLT4KICA8dGV4dCB4PSI1MCIgeT0iMTMwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMDBlNWZmIiBvcGFjaXR5PSIwLjQiPjIuODUlPC90ZXh0PgogIDx0ZXh0IHg9IjUwIiB5PSIxNTAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMwMGJjZDQiIG9wYWNpdHk9IjAuNCI+NC4xMiU8L3RleHQ+CiAgPHRleHQgeD0iNTAiIHk9IjE3MCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzAwZTVmZiIgb3BhY2l0eT0iMC4zIj4xLjk3JTwvdGV4dD4KICAKICA8dGV4dCB4PSI3MjAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2VmNTM1MCIgb3BhY2l0eT0iMC40Ij4tMS4zJTwvdGV4dD4KICA8dGV4dCB4PSI3MjAiIHk9IjEyMCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2U1NzM3MyIgb3BhY2l0eT0iMC4zIj4tMC44JTwvdGV4dD4KICAKICA8IS0tIEJvdHRvbSBheGlzIC0tPgogIDxsaW5lIHgxPSI2MCIgeTE9IjM2NSIgeDI9Ijc0MCIgeTI9IjM2NSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMiIvPgogIAogIDwhLS0gU3VidGxlIG92ZXJsYXkgLS0+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMCwwLDAsMC4xKSIvPgogIDx0ZXh0IHg9Ijc1MCIgeT0iMzk1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIgdGV4dC1hbmNob3I9ImVuZCI+15DXmdec15XXodeY16jXpteZ15Q8L3RleHQ+Cjwvc3ZnPg==" alt="ניתוח AI של שוק המשכנתאות" />
+    <div class="caption">נתוני שוק המשכנתאות 2026: בזמן שהלקוחות חוסכים יותר, הכנסות הבנקים מריביות משכנתא יורדות (צילום: אילוסטרציה)</div>
+
+    <p>בשנה האחרונה מתרחש בשוק המשכנתאות הישראלי תהליך שהבנקים לא ממהרים לפרסם. חברת טכנולוגיה ישראלית אחת מצליחה לגרום לבנקים להוריד ריביות ללקוחות, שלפני כן לא ידעו שיש להם בכלל על מה לדרוש.</p>
+
+    <p>הכלי שפיתחה החברה סורק את כל המשכנתאות הפעילות בישראל, מנתח את תנאי הריבית הנוכחית מול השוק ומייצר בתוך דקות תמונה ברורה: כמה אתה משלם, וכמה היית יכול לשלם.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">2,800</div>
+        <div class="lbl">שקל חיסכון ממוצע<br>בהחזר חודשי</div>
+      </div>
+      <div class="stat">
+        <div class="num">320K</div>
+        <div class="lbl">שקל חיסכון ממוצע<br>על כל חיי ההלוואה</div>
+      </div>
+      <div class="stat">
+        <div class="num">48שע</div>
+        <div class="lbl">מהרשמה עד<br>הצעה מהבנק</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p>9 מתוך 10 ישראלים שבדקו את המשכנתא שלהם גילו שהם משלמים יותר מדי. הבנקים פשוט לא מחויבים לעדכן אתכם.</p>
+    </div>
+
+    <p>החברה שעומדת מאחורי הכלי הזה היא משכנתא נטו. המודל שפיתחו פונה לכל הבנקים במקביל ומנהל מו"מ אוטומטי, שמייצר תחרות אמיתית שלא הייתה קיימת קודם.</p>
+
+    <div class="bank-box">
+      <div class="bank-title">הבנקים כבר מרגישים את זה</div>
+      <p>לפי דיווחים בענף, מספר בנקים גדולים הגבירו את שיחות ה"שימור" ללקוחות שפנו למחזור. בפועל, אלה שמגיעים עם ניתוח AI מוכן מקבלים הצעות טובות משמעותית.</p>
+    </div>
+
+    <div class="quote-box">
+      <blockquote>"הייתי בטוחה שהבנק שלי נותן לי את המחיר הטוב ביותר. גיליתי שהייתי יכולה לחסוך 2,400 שקל כל חודש במשך 20 שנה. כשחישבתי את זה בראש, ישבתי בהלם."</blockquote>
+      <div class="attr">ענת מ., כפר סבא &nbsp;|&nbsp; חיסכון: 576,000 שקל</div>
+    </div>
+
+    <div class="lead-form" id="leadForm">
+      <h3>רוצים לבדוק כמה תוכלו לחסוך?</h3>
+      <div class="sub">בדיקת התאמה חינם וללא התחייבות, לחיסכון בהחזר החודשי הקיים שלכם, או למשכנתא חדשה.</div>
+
+      <div class="radio-group">
+        <div class="radio-opt active" onclick="selectType(this, 'מחזור')">מחזור משכנתא קיימת</div>
+        <div class="radio-opt" onclick="selectType(this, 'חדשה')">משכנתא חדשה</div>
+      </div>
+
+      <div class="field"><input type="text" id="fname" placeholder="שם מלא" autocomplete="name" /></div>
+      <div class="field"><input type="tel" id="fphone" placeholder="מספר טלפון" autocomplete="tel" /></div>
+
+      <button class="cta-btn" onclick="submitForm()">לבדיקת התאמה חינם ←</button>
+      <div class="disclaimer">השליחה מהווה הסכמה ליצירת קשר בלבד &nbsp;|&nbsp; ניתוח חינם, ללא שום התחייבות</div>
+    </div>
+
+    <div class="success" id="successMsg">
+      <h3>מעולה, קיבלנו את הפרטים</h3>
+      <p>מומחה ממשכנתא נטו יחזור אליכם תוך 24 שעות עם ניתוח ראשוני</p>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    תוכן בשיתוף משכנתא נטו &nbsp;|&nbsp; אין באמור ייעוץ פיננסי &nbsp;|&nbsp; כל הנתונים הם בממוצע בלבד
+  </div>
+
+</div>
+
+<script>
+var selectedType = 'מחזור';
+
+function selectType(el, type) {
+  selectedType = type;
+  document.querySelectorAll('.radio-opt').forEach(function(o){ o.classList.remove('active'); });
+  el.classList.add('active');
+}
+
+function submitForm() {
+  var name = document.getElementById('fname').value.trim();
+  var phone = document.getElementById('fphone').value.trim();
+  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+
+  var btn = document.querySelector('.cta-btn');
+  btn.disabled = true;
+  btn.textContent = 'שולח...';
+
+  fetch('https://script.google.com/macros/s/AKfycbxx6G33gXifa7WamzZpRjkW7T2k06kPsGBdZoZB5MuOjYKwLE4znHmiT343QQM5wNdt/exec', {
+    method: 'POST',
+    body: JSON.stringify({ name: name, phone: phone, type: selectedType, source: 'lp1' })
+  })
+  .catch(function() {}) // Apps Script returns a CORS error but the data is saved
+  .finally(function() {
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
