@@ -10,29 +10,24 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Assistant', sans-serif; background: #f5f5f5; color: #1a1a1a; direction: rtl; }
   .site { background: #fff; max-width: 680px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
-
   .topbar { border-bottom: 2px solid #e0e0e0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; background: #fff; position: sticky; top: 0; z-index: 100; }
   .logo { font-size: 22px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px; text-decoration: none; }
   .logo span { color: #d32f2f; }
   .nav { display: flex; gap: 18px; }
   .nav a { font-size: 14px; color: #444; text-decoration: none; font-weight: 500; }
   .nav a:hover { color: #d32f2f; }
-
   .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 48px 24px; text-align: center; color: #fff; }
   .hero-tag { font-size: 12px; font-weight: 700; color: #d32f2f; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; background: rgba(211,47,47,0.15); display: inline-block; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(211,47,47,0.3); }
   .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.4; margin-bottom: 14px; }
   .hero h1 span { color: #d32f2f; }
   .hero p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 480px; margin: 0 auto; }
-
   .stats-bar { display: flex; background: #f8f8f8; border-bottom: 1px solid #eee; }
   .stat-item { flex: 1; padding: 16px 8px; text-align: center; border-left: 1px solid #eee; }
   .stat-item:last-child { border-left: none; }
   .stat-num { font-size: 22px; font-weight: 700; color: #d32f2f; }
   .stat-lbl { font-size: 12px; color: #888; margin-top: 3px; line-height: 1.3; }
-
   .content { padding: 32px 24px; }
   .section-title { font-size: 13px; font-weight: 700; color: #999; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
-
   .packages { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
   .package { border: 1.5px solid #e8e8e8; border-radius: 10px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
   .package.featured { border-color: #d32f2f; background: #fff8f8; }
@@ -40,7 +35,6 @@
   .pkg-info h3 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 3px; }
   .pkg-info p { font-size: 13px; color: #777; line-height: 1.4; }
   .pkg-badge { margin-right: auto; font-size: 11px; font-weight: 700; color: #d32f2f; background: #ffeaea; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
-
   .lead-form { background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); border: 1.5px solid #c5d0f5; border-radius: 12px; padding: 28px 22px; margin-top: 8px; }
   .lead-form h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #111; }
   .lead-form .sub { font-size: 14px; color: #777; margin-bottom: 22px; line-height: 1.6; }
@@ -50,75 +44,46 @@
   .cta-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%); color: #fff; border: none; border-radius: 8px; font-size: 19px; font-weight: 700; font-family: 'Assistant', sans-serif; cursor: pointer; transition: opacity 0.2s; margin-top: 4px; }
   .cta-btn:hover { opacity: 0.92; }
   .disclaimer { font-size: 12px; color: #bbb; text-align: center; margin-top: 10px; line-height: 1.5; }
-
   .success { display: none; background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 32px 20px; text-align: center; margin-top: 8px; }
   .success h3 { color: #2e7d32; font-size: 22px; margin-bottom: 8px; }
   .success p { color: #388e3c; font-size: 15px; margin: 0; }
-
   .footer-note { font-size: 12px; color: #ccc; text-align: center; padding: 20px; border-top: 1px solid #f0f0f0; background: #fafafa; }
-
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 22px; }
-    .stat-num { font-size: 18px; }
-  }
+  @media (max-width: 480px) { .hero h1 { font-size: 22px; } .stat-num { font-size: 18px; } }
 </style>
 </head>
 <body>
 <div class="site">
-
   <div class="topbar">
     <a href="#" class="logo">כלכלה<span>24</span></a>
     <div class="nav"><a href="#">נדלן</a><a href="#">כלכלה</a><a href="#">שוק ההון</a></div>
   </div>
-
   <div class="hero">
     <div class="hero-tag">פרסום בפורטל</div>
     <h1>רוצים להגיע ל<span>עשרות אלפי</span> בעלי עסקים בישראל?</h1>
     <p>כלכלה 24 הוא פורטל הכלכלה והעסקים המוביל — קהל יעד איכותי של בעלי עסקים, משקיעים ואנשי מקצוע</p>
   </div>
-
   <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">50K+</div>
-      <div class="stat-lbl">קוראים<br>חודשיים</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">82%</div>
-      <div class="stat-lbl">בעלי עסקים<br>ומנהלים</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">4.2</div>
-      <div class="stat-lbl">דקות זמן<br>שהייה ממוצע</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">50K+</div><div class="stat-lbl">קוראים<br>חודשיים</div></div>
+    <div class="stat-item"><div class="stat-num">82%</div><div class="stat-lbl">בעלי עסקים<br>ומנהלים</div></div>
+    <div class="stat-item"><div class="stat-num">4.2</div><div class="stat-lbl">דקות זמן<br>שהייה ממוצע</div></div>
   </div>
-
   <div class="content">
     <div class="section-title">אפשרויות פרסום</div>
     <div class="packages">
       <div class="package featured">
         <div class="pkg-icon">📰</div>
-        <div class="pkg-info">
-          <h3>כתבה ממומנת</h3>
-          <p>כתבה בסגנון עיתונאי שמספרת את הסיפור של העסק שלכם — הכי אפקטיבי</p>
-        </div>
+        <div class="pkg-info"><h3>כתבה ממומנת</h3><p>כתבה בסגנון עיתונאי שמספרת את הסיפור של העסק שלכם — הכי אפקטיבי</p></div>
         <div class="pkg-badge">פופולרי</div>
       </div>
       <div class="package">
         <div class="pkg-icon">🎯</div>
-        <div class="pkg-info">
-          <h3>באנר פרמיום</h3>
-          <p>חשיפה בולטת בעמוד הבית ובכתבות המובילות</p>
-        </div>
+        <div class="pkg-info"><h3>באנר פרמיום</h3><p>חשיפה בולטת בעמוד הבית ובכתבות המובילות</p></div>
       </div>
       <div class="package">
         <div class="pkg-icon">📧</div>
-        <div class="pkg-info">
-          <h3>ניוזלטר שבועי</h3>
-          <p>פרסום ישיר ל-15,000 מנויים פעילים מדי שבוע</p>
-        </div>
+        <div class="pkg-info"><h3>ניוזלטר שבועי</h3><p>פרסום ישיר ל-15,000 מנויים פעילים מדי שבוע</p></div>
       </div>
     </div>
-
     <div class="lead-form" id="leadForm">
       <h3>השאירו פרטים ונחזור אליכם</h3>
       <div class="sub">נציג שלנו יחזור אליכם תוך יום עסקים עם הצעה מותאמת לעסק שלכם</div>
@@ -128,35 +93,24 @@
       <button class="cta-btn" onclick="submitForm()">שלחו לי הצעה ←</button>
       <div class="disclaimer">פרטיכם לא יועברו לצד שלישי &nbsp;|&nbsp; חזרה תוך יום עסקים</div>
     </div>
-
     <div class="success" id="successMsg">
       <h3>תודה, קיבלנו את הפרטים!</h3>
       <p>נציג כלכלה 24 יחזור אליכם תוך יום עסקים עם הצעה מותאמת</p>
     </div>
   </div>
-
-  <div class="footer-note">
-    כלכלה 24 | פורטל כלכלה ועסקים &nbsp;|&nbsp; לפרסום ושיתופי פעולה צרו קשר
-  </div>
-
+  <div class="footer-note">כלכלה 24 | פורטל כלכלה ועסקים &nbsp;|&nbsp; לפרסום ושיתופי פעולה צרו קשר</div>
 </div>
 <script>
-var WEBHOOK = 'https://script.google.com/macros/s/AKfycbxx6G33gXifa7WamzZpRjkW7T2k06kPsGBdZoZB5MuOjYKwLE4znHmiT343QQM5wNdt/exec';
-
+var WEBHOOK = 'https://script.google.com/macros/s/AKfycbzMx-Dq4v0Ta_jTQBBfL7OBsuzlFuOsbv-jIA_0p4hCx02JOF_ptonlCzp9y1rycE4u/exec';
 function submitForm() {
   var business = document.getElementById('fbusiness').value.trim();
   var name = document.getElementById('fname').value.trim();
   var phone = document.getElementById('fphone').value.trim();
   if (!business || !name || !phone) { alert('נא למלא את כל השדות'); return; }
   var btn = document.querySelector('.cta-btn');
-  btn.disabled = true;
-  btn.textContent = 'שולח...';
-  fetch(WEBHOOK, {
-    method: 'POST',
-    body: JSON.stringify({ business: business, name: name, phone: phone, source: 'homepage' })
-  })
-  .catch(function() {})
-  .finally(function() {
+  btn.disabled = true; btn.textContent = 'שולח...';
+  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ business: business, name: name, phone: phone, source: 'homepage' }) })
+  .catch(function() {}).finally(function() {
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   });

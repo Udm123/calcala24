@@ -10,16 +10,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Assistant', sans-serif; background: #f5f5f5; color: #1a1a1a; direction: rtl; }
   .site { background: #fff; max-width: 680px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
-
   .topbar { border-bottom: 2px solid #e0e0e0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; background: #fff; position: sticky; top: 0; z-index: 100; }
   .logo { font-size: 22px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.5px; text-decoration: none; }
   .logo span { color: #d32f2f; }
   .nav { display: flex; gap: 18px; }
   .nav a { font-size: 14px; color: #444; text-decoration: none; font-weight: 500; }
   .nav a:hover { color: #d32f2f; }
-
   .breadcrumb { padding: 10px 20px; font-size: 13px; color: #999; border-bottom: 1px solid #f0f0f0; background: #fafafa; }
-
   .article { padding: 24px 20px; }
   .tag { font-size: 12px; font-weight: 700; color: #d32f2f; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: inline-block; }
   h1 { font-size: 26px; font-weight: 700; line-height: 1.35; color: #111; margin-bottom: 12px; }
@@ -27,34 +24,24 @@
   .byline { font-size: 13px; color: #999; margin-bottom: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
   .byline .author { font-weight: 600; color: #555; }
   .byline .sep { color: #ddd; }
-
   p { font-size: 17px; line-height: 1.75; color: #222; margin-bottom: 16px; }
-
   .stats { display: flex; gap: 0; margin: 24px 0; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
   .stat { flex: 1; text-align: center; padding: 16px 8px; border-left: 1px solid #eee; }
   .stat:last-child { border-left: none; }
   .stat .num { font-size: 24px; font-weight: 700; color: #d32f2f; line-height: 1; }
   .stat .lbl { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.3; }
-
   .highlight { background: #fff3e0; border-right: 4px solid #f57c00; padding: 14px 16px; margin: 20px 0; border-radius: 0 4px 4px 0; }
   .highlight p { margin: 0; font-size: 16px; font-weight: 600; color: #333; }
-
   .steps { margin: 24px 0; display: flex; flex-direction: column; gap: 14px; }
   .step { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid #eee; border-radius: 10px; }
   .step-num { font-size: 22px; font-weight: 700; color: #d32f2f; min-width: 32px; line-height: 1; }
   .step-text h4 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 4px; }
   .step-text p { font-size: 14px; color: #666; margin: 0; line-height: 1.5; }
-
-  .quote-box { border-right: 4px solid #222; padding: 12px 16px; margin: 20px 0; background: #fafafa; border-radius: 0 6px 6px 0; }
-  .quote-box blockquote { font-size: 16px; font-style: italic; color: #333; margin-bottom: 6px; line-height: 1.6; }
-  .quote-box .attr { font-size: 13px; color: #888; font-style: normal; font-weight: 600; }
-
   .testimonials { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
   .testi { background: #f9f9f9; border-radius: 8px; padding: 14px 16px; border-right: 3px solid #d32f2f; }
   .testi p { font-size: 15px; color: #333; margin-bottom: 6px; line-height: 1.5; }
   .testi .tname { font-size: 13px; font-weight: 700; color: #d32f2f; }
   .testi .tsaving { font-size: 12px; color: #888; }
-
   .lead-form { background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); border: 1.5px solid #c5d0f5; border-radius: 12px; padding: 24px 20px; margin: 28px 0; }
   .lead-form h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: #111; line-height: 1.3; }
   .lead-form .sub { font-size: 14px; color: #777; margin-bottom: 18px; line-height: 1.6; }
@@ -67,95 +54,44 @@
   .cta-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%); color: #fff; border: none; border-radius: 8px; font-size: 19px; font-weight: 700; font-family: 'Assistant', sans-serif; cursor: pointer; transition: opacity 0.2s; margin-top: 4px; }
   .cta-btn:hover { opacity: 0.92; }
   .disclaimer { font-size: 12px; color: #bbb; text-align: center; margin-top: 10px; line-height: 1.5; }
-
   .success { display: none; background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 28px 20px; text-align: center; margin: 28px 0; }
   .success h3 { color: #2e7d32; font-size: 20px; margin-bottom: 8px; }
   .success p { color: #388e3c; font-size: 15px; margin: 0; }
-
   .footer-note { font-size: 12px; color: #ccc; text-align: center; padding: 20px; border-top: 1px solid #f0f0f0; background: #fafafa; }
-
-  @media (max-width: 480px) {
-    h1 { font-size: 22px; }
-    .stat .num { font-size: 20px; }
-    .radio-group { flex-direction: column; }
-  }
+  @media (max-width: 480px) { h1 { font-size: 22px; } .stat .num { font-size: 20px; } .radio-group { flex-direction: column; } }
 </style>
 </head>
 <body>
 <div class="site">
-
   <div class="topbar">
     <a href="#" class="logo">כלכלה<span>24</span></a>
     <div class="nav"><a href="#">נדלן</a><a href="#">כלכלה</a><a href="#">שוק ההון</a></div>
   </div>
-
-  <div class="breadcrumb">
-    <a href="#">ראשי</a> &rsaquo; <a href="#">נדלן</a> &rsaquo; <a href="#">משכנתאות</a>
-  </div>
-
+  <div class="breadcrumb"><a href="#">ראשי</a> &rsaquo; <a href="#">נדלן</a> &rsaquo; <a href="#">משכנתאות</a></div>
   <div class="article">
     <div class="tag">חשיפה בלעדית</div>
-
     <h1>חברת AI ישראלית פיצחה את שיטת לקיחת המשכנתא — חיסכון של עד מאות אלפי שקלים</h1>
-
     <div class="subtitle">מודל AI שפונה לכל הבנקים בו-זמנית ומנהל משא ומתן אוטומטי — 97% מהלקוחות קיבלו הצעה טובה יותר ממה שהציע הבנק שלהם</div>
-
     <div class="byline">
       <span class="author">רותם בן-דוד</span><span class="sep">|</span>
       <span>כתב נדלן</span><span class="sep">|</span>
       <span>24.5.2026</span><span class="sep">|</span>
       <span>4 דקות קריאה</span>
     </div>
-
     <p>בזמן שרוב הישראלים לוקחים משכנתא מהבנק שאצלו יש להם חשבון, חברה ישראלית אחת בנתה מודל שמשנה את כל המשחק. במקום לפנות לבנק אחד ולקבל הצעה "לקחת או לעזוב", המערכת פונה לכל הבנקים בו-זמנית ויוצרת תחרות אמיתית — תוך 48 שעות.</p>
-
     <div class="stats">
-      <div class="stat">
-        <div class="num">320K</div>
-        <div class="lbl">שקל חיסכון<br>ממוצע ללקוח</div>
-      </div>
-      <div class="stat">
-        <div class="num">97%</div>
-        <div class="lbl">מהלקוחות קיבלו<br>הצעה טובה יותר</div>
-      </div>
-      <div class="stat">
-        <div class="num">48שע</div>
-        <div class="lbl">עד קבלת<br>הצעות מהבנקים</div>
-      </div>
+      <div class="stat"><div class="num">320K</div><div class="lbl">שקל חיסכון<br>ממוצע ללקוח</div></div>
+      <div class="stat"><div class="num">97%</div><div class="lbl">מהלקוחות קיבלו<br>הצעה טובה יותר</div></div>
+      <div class="stat"><div class="num">48שע</div><div class="lbl">עד קבלת<br>הצעות מהבנקים</div></div>
     </div>
-
-    <p>החברה שמאחורי המהפכה הזו היא <strong>משכנתא נטו</strong>. המערכת שפיתחו סורקת את הנתונים האישיים של כל לקוח, מחשבת את תרחישי ההחזר האופטימליים ופונה לכל הבנקים הגדולים בו-זמנית — אוטומטית, ללא התערבות אנושית בשלב הראשוני.</p>
-
-    <div class="highlight">
-      <p>דוגמה אמיתית: על משכנתא של 1.6 מיליון שקל, לקוח אחד חסך 280,000 שקל לאורך חיי ההלוואה — בזכות הפחתה של 1.4% בריבית.</p>
-    </div>
-
+    <p>החברה שמאחורי המהפכה הזו היא <strong>משכנתא נטו</strong>. המערכת שפיתחו סורקת את הנתונים האישיים של כל לקוח, מחשבת את תרחישי ההחזר האופטימליים ופונה לכל הבנקים הגדולים בו-זמנית — אוטומטית.</p>
+    <div class="highlight"><p>דוגמה אמיתית: על משכנתא של 1.6 מיליון שקל, לקוח אחד חסך 280,000 שקל לאורך חיי ההלוואה — בזכות הפחתה של 1.4% בריבית.</p></div>
     <h2 style="font-size:20px;margin:24px 0 14px;color:#111;">איך זה עובד?</h2>
-
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <h4>ניתוח AI אישי</h4>
-          <p>המערכת סורקת את הנתונים הפיננסיים שלכם ומחשבת את תרחישי ההחזר האופטימליים עבורכם</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <h4>פנייה לכל הבנקים בו-זמנית</h4>
-          <p>פנייה אוטומטית לכל הבנקים הגדולים בישראל — בנק הפועלים, לאומי, מזרחי, דיסקונט ועוד</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <h4>משא ומתן ובחירת ההצעה הטובה ביותר</h4>
-          <p>יועץ בכיר ממשכנתא נטו מנהל מו"מ אגרסיבי ומציג לכם את ההצעה המשתלמת ביותר</p>
-        </div>
-      </div>
+      <div class="step"><div class="step-num">1</div><div class="step-text"><h4>ניתוח AI אישי</h4><p>המערכת סורקת את הנתונים הפיננסיים שלכם ומחשבת את תרחישי ההחזר האופטימליים עבורכם</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><h4>פנייה לכל הבנקים בו-זמנית</h4><p>פנייה אוטומטית לכל הבנקים הגדולים בישראל — בנק הפועלים, לאומי, מזרחי, דיסקונט ועוד</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><h4>משא ומתן ובחירת ההצעה הטובה ביותר</h4><p>יועץ בכיר ממשכנתא נטו מנהל מו"מ אגרסיבי ומציג לכם את ההצעה המשתלמת ביותר</p></div></div>
     </div>
-
     <div class="testimonials">
       <div class="testi">
         <p>"לא האמנו כמה הבנק שלנו גבה מאיתנו יותר מדי. תוך 48 שעות קיבלנו 4 הצעות תחרותיות. החיסכון שלנו יממן חופשה בכל שנה לעשרים שנה."</p>
@@ -168,63 +104,46 @@
         <div class="tsaving">חיסכון: 310,000 ₪</div>
       </div>
       <div class="testi">
-        <p>"אבי מ. מחיפה קיבל 4 הצעות מתחרות תוך 48 שעות. בחר את הטובה ביותר וחסך 245,000 שקל."</p>
+        <p>"קיבלתי 4 הצעות מתחרות תוך 48 שעות. בחרתי את הטובה ביותר וחסכתי 245,000 שקל."</p>
         <div class="tname">אבי מ., חיפה</div>
         <div class="tsaving">חיסכון: 245,000 ₪</div>
       </div>
     </div>
-
     <div class="lead-form" id="leadForm">
       <h3>בדקו כמה תוכלו לחסוך — חינם</h3>
       <div class="sub">ייעוץ ראשוני חינם וללא התחייבות. דמי הצלחה משולמים רק אחרי חתימה על המשכנתא.</div>
-
       <div class="radio-group">
         <div class="radio-opt active" onclick="selectType(this, 'מחזור')">מחזור משכנתא קיימת</div>
         <div class="radio-opt" onclick="selectType(this, 'חדשה')">משכנתא חדשה</div>
       </div>
-
       <div class="field"><input type="text" id="fname" placeholder="שם מלא" autocomplete="name" /></div>
       <div class="field"><input type="tel" id="fphone" placeholder="מספר טלפון" autocomplete="tel" /></div>
-
       <button class="cta-btn" onclick="submitForm()">לבדיקת זכאות חינם ←</button>
       <div class="disclaimer">ייעוץ ראשוני חינם, ללא שום התחייבות &nbsp;|&nbsp; דמי הצלחה בלבד</div>
     </div>
-
     <div class="success" id="successMsg">
       <h3>מעולה, קיבלנו את הפרטים!</h3>
       <p>יועץ ממשכנתא נטו יחזור אליכם תוך 24 שעות עם ניתוח ראשוני</p>
     </div>
-
   </div>
-
-  <div class="footer-note">
-    תוכן בשיתוף משכנתא נטו &nbsp;|&nbsp; אין באמור ייעוץ פיננסי &nbsp;|&nbsp; הנתונים מבוססים על לקוחות אמיתיים, אינם מהווים ערובה
-  </div>
-
+  <div class="footer-note">תוכן בשיתוף משכנתא נטו &nbsp;|&nbsp; אין באמור ייעוץ פיננסי &nbsp;|&nbsp; הנתונים מבוססים על לקוחות אמיתיים</div>
 </div>
 <script>
 var selectedType = 'מחזור';
-var WEBHOOK = 'https://script.google.com/macros/s/AKfycbxx6G33gXifa7WamzZpRjkW7T2k06kPsGBdZoZB5MuOjYKwLE4znHmiT343QQM5wNdt/exec';
-
+var WEBHOOK = 'https://script.google.com/macros/s/AKfycbzMx-Dq4v0Ta_jTQBBfL7OBsuzlFuOsbv-jIA_0p4hCx02JOF_ptonlCzp9y1rycE4u/exec';
 function selectType(el, type) {
   selectedType = type;
   document.querySelectorAll('.radio-opt').forEach(function(o){ o.classList.remove('active'); });
   el.classList.add('active');
 }
-
 function submitForm() {
   var name = document.getElementById('fname').value.trim();
   var phone = document.getElementById('fphone').value.trim();
   if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
   var btn = document.querySelector('.cta-btn');
-  btn.disabled = true;
-  btn.textContent = 'שולח...';
-  fetch(WEBHOOK, {
-    method: 'POST',
-    body: JSON.stringify({ name: name, phone: phone, type: selectedType, source: 'lp2' })
-  })
-  .catch(function() {})
-  .finally(function() {
+  btn.disabled = true; btn.textContent = 'שולח...';
+  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ name: name, phone: phone, type: selectedType, source: 'lp2' }) })
+  .catch(function() {}).finally(function() {
     document.getElementById('leadForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   });
