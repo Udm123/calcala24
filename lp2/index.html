@@ -346,24 +346,28 @@ function selectType(el, type) {
   document.querySelectorAll('.rpill').forEach(function(o){ o.classList.remove('active'); });
   el.classList.add('active');
 }
-function submitForm() {
+async function submitForm() {
   var name = document.getElementById('fname').value.trim();
   var phone = document.getElementById('fphone').value.trim();
   if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
   var btn = document.querySelector('.fsubmit');
-  btn.disabled = true; btn.textContent = 'שולח...';
-  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ name: name, phone: phone, type: selectedType, source: 'lp2' }) })
-  .catch(function(){}).finally(function(){
-    document.getElementById('leadForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  });
+  btn.disabled = true; btn.textContent = '⏳ שומר פרטים...';
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: selectedType, source: 'LP2 (/lp2/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
 }
-function submitSidebar() {
+async function submitSidebar() {
   var name = document.getElementById('sb-name').value.trim();
   var phone = document.getElementById('sb-phone').value.trim();
   if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
-  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ name: name, phone: phone, type: 'sidebar', source: 'lp2' }) })
-  .catch(function(){}).finally(function(){ alert('תודה! ניצור קשר בהקדם.'); });
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: 'sidebar', source: 'LP2 Sidebar (/lp2/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  alert('תודה! ניצור קשר בהקדם.');
 }
 </script>
 </body>

@@ -109,18 +109,19 @@
 </div>
 <script>
 var WEBHOOK = 'https://script.google.com/macros/s/AKfycbzMx-Dq4v0Ta_jTQBBfL7OBsuzlFuOsbv-jIA_0p4hCx02JOF_ptonlCzp9y1rycE4u/exec';
-function submitForm() {
+async function submitForm() {
   var business = document.getElementById('fbusiness').value.trim();
   var name = document.getElementById('fname').value.trim();
   var phone = document.getElementById('fphone').value.trim();
   if (!business || !name || !phone) { alert('נא למלא את כל השדות'); return; }
   var btn = document.querySelector('.cta-btn');
-  btn.disabled = true; btn.textContent = 'שולח...';
-  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ business: business, name: name, phone: phone, source: 'homepage' }) })
-  .catch(function() {}).finally(function() {
-    document.getElementById('leadForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  });
+  btn.disabled = true; btn.textContent = '⏳ שומר פרטים...';
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, business: business, source: 'דף הבית (/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
 }
 </script>
 </body>

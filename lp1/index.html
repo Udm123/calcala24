@@ -127,17 +127,18 @@ function selectType(el, type) {
   document.querySelectorAll('.radio-opt').forEach(function(o){ o.classList.remove('active'); });
   el.classList.add('active');
 }
-function submitForm() {
+async function submitForm() {
   var name = document.getElementById('fname').value.trim();
   var phone = document.getElementById('fphone').value.trim();
   if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
   var btn = document.querySelector('.cta-btn');
-  btn.disabled = true; btn.textContent = 'שולח...';
-  fetch(WEBHOOK, { method: 'POST', body: JSON.stringify({ name: name, phone: phone, type: selectedType, source: 'lp1' }) })
-  .catch(function() {}).finally(function() {
-    document.getElementById('leadForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  });
+  btn.disabled = true; btn.textContent = '⏳ שומר פרטים...';
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: selectedType, source: 'LP1 (/lp1/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
 }
 </script>
 </body>
