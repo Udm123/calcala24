@@ -158,6 +158,14 @@
     .logo { font-size: 26px; }
   }
 </style>
+  <!-- Google Ads Pixel -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18188063411"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18188063411');
+  </script>
 </head>
 <body>
 
@@ -356,6 +364,7 @@ async function submitForm() {
     var params = new URLSearchParams({ name: name, phone: phone, size: selectedType, source: 'LP2 (/lp2/)' });
     await fetch(WEBHOOK + '?' + params);
   } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
   document.getElementById('leadForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
@@ -367,6 +376,7 @@ async function submitSidebar() {
     var params = new URLSearchParams({ name: name, phone: phone, size: 'sidebar', source: 'LP2 Sidebar (/lp2/)' });
     await fetch(WEBHOOK + '?' + params);
   } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
   alert('תודה! ניצור קשר בהקדם.');
 }
 </script>

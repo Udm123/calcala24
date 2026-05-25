@@ -59,6 +59,14 @@
   .footer-note { font-size: 12px; color: #ccc; text-align: center; padding: 20px; border-top: 1px solid #f0f0f0; background: #fafafa; }
   @media (max-width: 480px) { h1 { font-size: 22px; } .stat .num { font-size: 20px; } .nav { gap: 12px; } .radio-group { flex-direction: column; } }
 </style>
+  <!-- Google Ads Pixel -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18188063411"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18188063411');
+  </script>
 </head>
 <body>
 <div class="site">
@@ -137,6 +145,7 @@ async function submitForm() {
     var params = new URLSearchParams({ name: name, phone: phone, size: selectedType, source: 'LP1 (/lp1/)' });
     await fetch(WEBHOOK + '?' + params);
   } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
   document.getElementById('leadForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
