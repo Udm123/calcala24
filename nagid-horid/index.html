@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הנגיד הוריד — ואתם עדיין לא מחזרתם? כל חודש עולה לכם כסף | כלכלה 24</title>
+<meta name="description" content="לאחר הורדת הריבית ל-3.75%, ישראלים שמחזרים משכנתא חוסכים עד 1,500 שקל בחודש. הבנק שלכם לא יתקשר. אתם צריכים לפעול.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Ads Pixel -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18188063411"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18188063411');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Assistant', sans-serif; background: #f2f2f2; color: #1a1a1a; direction: rtl; }
+a { text-decoration: none; }
+
+/* TOP BAR */
+.topbar { background: #fff; border-bottom: 2px solid #e0e0e0; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 22px; font-weight: 800; color: #111; }
+.logo span { color: #c62828; }
+.nav { display: flex; gap: 16px; }
+.nav a { font-size: 13px; color: #555; font-weight: 600; }
+.nav a:hover { color: #c62828; }
+
+/* BREAKING TICKER */
+.ticker { background: #c62828; color: #fff; padding: 8px 0; display: flex; overflow: hidden; font-size: 13px; font-weight: 700; }
+.ticker-tag { background: #222; padding: 0 14px; white-space: nowrap; display: flex; align-items: center; letter-spacing: 0.5px; }
+.ticker-wrap { overflow: hidden; flex: 1; }
+.ticker-inner { display: inline-block; white-space: nowrap; animation: ticker 28s linear infinite; padding-right: 100%; }
+.ticker-inner span { margin-left: 60px; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+/* LAYOUT */
+.page { max-width: 760px; margin: 0 auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
+
+/* ARTICLE */
+.article { padding: 28px 24px; }
+.art-cat { font-size: 11px; font-weight: 800; color: #c62828; letter-spacing: 1.5px; text-transform: uppercase; background: #ffeaea; padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 14px; }
+h1 { font-size: 30px; font-weight: 800; line-height: 1.3; color: #0a0a0a; margin-bottom: 14px; }
+.deck { font-size: 18px; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 18px; border-right: 4px solid #c62828; padding-right: 14px; background: #fff8f8; padding: 12px 16px; border-radius: 0 6px 6px 0; }
+.byline { display: flex; gap: 14px; font-size: 12px; color: #999; margin-bottom: 20px; flex-wrap: wrap; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #eee; }
+.byline strong { color: #555; font-weight: 700; }
+.byline .dot { color: #ddd; }
+
+/* HERO IMAGE */
+.hero-img-wrap { margin: 0 -24px 24px; position: relative; }
+.hero-img-wrap img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.hero-caption { position: absolute; bottom: 0; right: 0; left: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: rgba(255,255,255,0.85); font-size: 12px; padding: 20px 14px 10px; }
+
+/* STATS BAR */
+.stats-bar { display: flex; background: #0d1b2a; border-radius: 10px; margin: 24px 0; overflow: hidden; }
+.stat-b { flex: 1; padding: 16px 10px; text-align: center; border-left: 1px solid rgba(255,255,255,0.1); }
+.stat-b:last-child { border-left: none; }
+.stat-b .num { font-size: 26px; font-weight: 800; line-height: 1; }
+.stat-b .lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 5px; line-height: 1.3; }
+.red { color: #ff5252; }
+.green { color: #69f0ae; }
+.white { color: #fff; }
+.yellow { color: #ffd740; }
+
+/* BODY TEXT */
+p { font-size: 17px; line-height: 1.8; color: #222; margin-bottom: 18px; }
+p strong { color: #111; }
+
+/* INLINE IMAGE */
+.inline-img { margin: 24px 0; border-radius: 8px; overflow: hidden; }
+.inline-img img { width: 100%; height: 240px; object-fit: cover; display: block; }
+.inline-img .cap { font-size: 12px; color: #999; padding: 8px 12px; background: #fafafa; border: 1px solid #eee; border-top: none; }
+
+/* HIGHLIGHT BOX */
+.highlight { background: #fff3e0; border-right: 5px solid #f57c00; padding: 16px 18px; margin: 22px 0; border-radius: 0 8px 8px 0; }
+.highlight p { margin: 0; font-size: 16px; font-weight: 700; color: #333; }
+
+/* DANGER BOX */
+.danger-box { background: #ffebee; border: 2px solid #ef9a9a; border-radius: 10px; padding: 18px 20px; margin: 24px 0; }
+.danger-box .dtitle { font-size: 15px; font-weight: 800; color: #c62828; margin-bottom: 10px; }
+.danger-box p { margin: 0; font-size: 15px; color: #444; }
+
+/* QUOTE */
+.quote { border-right: 5px solid #0d1b2a; padding: 14px 18px; margin: 24px 0; background: #f8f9ff; border-radius: 0 8px 8px 0; }
+.quote blockquote { font-size: 18px; font-weight: 700; color: #111; line-height: 1.6; font-style: italic; margin-bottom: 8px; }
+.quote .attr { font-size: 13px; color: #888; font-weight: 600; }
+
+/* STEPS */
+.steps { background: #f8faff; border: 1.5px solid #dce3f5; border-radius: 10px; padding: 20px; margin: 24px 0; }
+.steps-title { font-size: 15px; font-weight: 800; color: #1a237e; margin-bottom: 14px; text-align: center; letter-spacing: 0.3px; }
+.step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; }
+.step:last-child { margin-bottom: 0; }
+.step-num { background: #c62828; color: #fff; font-size: 14px; font-weight: 800; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-txt { font-size: 15px; color: #333; line-height: 1.5; }
+.step-txt strong { color: #111; }
+
+/* SAVINGS TABLE */
+.savings-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
+.sav-card { background: #0d1b2a; color: #fff; border-radius: 10px; padding: 16px 12px; text-align: center; }
+.sav-card .sv-num { font-size: 22px; font-weight: 800; color: #69f0ae; }
+.sav-card .sv-lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; line-height: 1.3; }
+
+/* H2 */
+h2 { font-size: 22px; font-weight: 800; color: #0a0a0a; margin: 28px 0 14px; border-bottom: 3px solid #c62828; padding-bottom: 8px; display: inline-block; }
+
+/* LEAD FORM */
+.lead-form-wrap { background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%); border-radius: 12px; padding: 30px 24px; margin: 32px 0; }
+.lf-badge { background: #c62828; color: #fff; font-size: 12px; font-weight: 800; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 14px; letter-spacing: 0.5px; }
+.lf-title { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+.lf-sub { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 22px; line-height: 1.5; }
+.lf-field { margin-bottom: 12px; }
+.lf-field input { width: 100%; padding: 14px 16px; border: none; border-radius: 8px; font-size: 16px; font-family: 'Assistant', sans-serif; background: rgba(255,255,255,0.1); color: #fff; outline: none; border: 1.5px solid rgba(255,255,255,0.2); transition: border-color 0.2s; }
+.lf-field input::placeholder { color: rgba(255,255,255,0.5); }
+.lf-field input:focus { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.15); }
+.lf-btn { width: 100%; padding: 17px; background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%); color: #fff; border: none; border-radius: 8px; font-size: 20px; font-weight: 800; font-family: 'Assistant', sans-serif; cursor: pointer; transition: opacity 0.2s; margin-top: 4px; letter-spacing: 0.3px; }
+.lf-btn:hover { opacity: 0.92; }
+.lf-trust { display: flex; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+.lf-trust span { font-size: 12px; color: rgba(255,255,255,0.6); }
+.lf-success { display: none; text-align: center; padding: 20px; }
+.lf-success h3 { color: #69f0ae; font-size: 22px; margin-bottom: 8px; }
+.lf-success p { color: rgba(255,255,255,0.8); font-size: 15px; }
+
+/* TWO IMAGES */
+.two-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+.two-imgs img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+
+/* FOOTER */
+.footer { font-size: 12px; color: #bbb; text-align: center; padding: 20px; border-top: 1px solid #eee; background: #fafafa; }
+.footer a { color: #c62828; font-weight: 600; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 24px; }
+  .deck { font-size: 16px; }
+  .stats-bar { flex-wrap: wrap; }
+  .stat-b { min-width: 50%; }
+  .savings-grid { grid-template-columns: 1fr 1fr; }
+  .two-imgs { grid-template-columns: 1fr; }
+  .hero-img-wrap img { height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="/" class="logo">כלכלה<span>24</span></a>
+  <div class="nav">
+    <a href="/">נדל"ן</a>
+    <a href="/">כלכלה</a>
+    <a href="/">שוק ההון</a>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-tag">מבזק ◆</div>
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span>◆ הנגיד הוריד שוב את הריבית — ישראלים חוסכים אלפי שקלים בחודש</span>
+      <span>◆ 97% מבעלי משכנתא שבדקו — גילו שהם משלמים יותר מדי</span>
+      <span>◆ מודל AI חדש מתמודד עם כל הבנקים בו-זמנית</span>
+      <span>◆ בדיקת התאמה ראשונית — חינם ללא התחייבות</span>
+      <span>◆ חיסכון ממוצע: 1,500 שקל בחודש | 18,000 שקל בשנה</span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+<div class="article">
+
+  <span class="art-cat">חשיפה בלעדית | נדל"ן ומשכנתאות</span>
+
+  <h1>הנגיד הוריד שוב — ואתם עדיין לא מחזרתם? כל חודש שאתם ממתינים, אתם מוסרים לבנק כסף שמגיע לכם</h1>
+
+  <div class="deck">
+    לאחר הורדת הריבית ל-3.75%, חלון ההזדמנויות למחזור משכנתא הוא הגדול ביותר בשנים. הבנק שלכם לא יתקשר. לא ישלח SMS. ולא יציע לכם עסקה טובה יותר — כי למה שיעשה את זה?
+  </div>
+
+  <div class="byline">
+    <strong>מערכת כלכלה 24</strong>
+    <span class="dot">|</span>
+    <span>כתבת נדל"ן ומשכנתאות</span>
+    <span class="dot">|</span>
+    <span>זמן קריאה: 4 דקות</span>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="hero-img-wrap">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop" alt="זוג ישראלי בודק משכנתא">
+    <div class="hero-caption">זוגות רבים גילו לאחרונה שהם שילמו יותר מדי על המשכנתא שלהם בשנים האחרונות | צילום: Unsplash</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-b"><div class="num yellow">3.75%</div><div class="lbl">ריבית בנק<br>ישראל היום</div></div>
+    <div class="stat-b"><div class="num red">-0.5%</div><div class="lbl">ירידה<br>ב-2026</div></div>
+    <div class="stat-b"><div class="num white">5.25%</div><div class="lbl">ריבית<br>פריים</div></div>
+    <div class="stat-b"><div class="num green">₪1,500</div><div class="lbl">חיסכון חודשי<br>ממוצע</div></div>
+  </div>
+
+  <p>
+    לאחר שנגיד בנק ישראל הוריד את הריבית שוב, קרה משהו מוזר מאוד: <strong>הבנק שלכם לא התקשר אליכם.</strong>
+  </p>
+  <p>
+    לא שלח הודעה. לא הציע להוריד את התשלום החודשי. לא הזמין אתכם לבסדרה. כי למה שיעשה את זה? כל חודש שאתם נשארים עם הריבית הישנה — הוא מרוויח יותר.
+  </p>
+
+  <div class="danger-box">
+    <div class="dtitle">⚠️ כמה אתם בדיוק מפסידים עכשיו?</div>
+    <p>אם יש לכם משכנתא שנלקחה לפני 2024 בריבית מעל 4.5% — סביר להניח שאתם משלמים בין <strong>700 ל-1,500 שקל יותר מדי בחודש</strong>. זה עד <strong>18,000 שקל בשנה</strong>. זה עשרות אלפים לאורך חיי ההלוואה. ועדיין אין לכם שיחה מהבנק.</p>
+  </div>
+
+  <!-- INLINE IMAGE 1 -->
+  <div class="inline-img">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&fit=crop" alt="אישה ישראלית מחשבת חיסכון במשכנתא">
+    <div class="cap">עשרות אלפי ישראלים גילו לאחרונה שהם יכולים לחסוך סכומים משמעותיים על ידי מחזור המשכנתא | צילום: Unsplash</div>
+  </div>
+
+  <h2>הבנק מנגל אתכם — בשקט ובשיטתיות</h2>
+
+  <p>
+    זו לא קונספירציה. זה עסק. הבנקים יודעים שרוב הישראלים לא יזוזו. רוב האנשים חושבים שמחזור משכנתא זה תהליך מסובך, יקר ומייגע. אז הם נשארים — ומשלמים.
+  </p>
+  <p>
+    <strong>אבל המציאות השתנתה.</strong> לאחר הורדת הריבית, נוצרה הזדמנות שלא הייתה כמוה זמן רב. ומי שפועל עכשיו — חוסך. מי שממתין — מממן את הרווחים של הבנק.
+  </p>
+
+  <div class="quote">
+    <blockquote>"הבנק לא יתקשר אליכם לומר שהגיע הזמן למחזר. הוא מנגל אתכם ומתן שאתם לא מממשים את מה שמגיע לכם. הוא מרוויח מהעצלנות שלכם."</blockquote>
+    <div class="attr">— מומחה משכנתאות בכיר, משכנתא נטו</div>
+  </div>
+
+  <!-- TWO IMAGES -->
+  <div class="two-imgs">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80&fit=crop" alt="מפתחות דירה חדשה">
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&q=80&fit=crop" alt="ייעוץ פיננסי">
+  </div>
+
+  <h2>הפתרון שגורם לבנקים לחשוש</h2>
+
+  <p>
+    לפני כשנה פיתחה חברת <strong>משכנתא נטו</strong> מודל AI שעושה בדיוק מה שהבנקים לא רוצים שתעשו: הוא מתמודד עם <strong>כל הבנקים בו-זמנית</strong> ומאלץ אותם להתחרות אחד על השני כדי לקבל את הלוואה שלכם.
+  </p>
+  <p>
+    לא צריך לצאת מהבית. לא צריך לחכות שעות בתור. לא צריך להתווכח עם פקיד שלא אכפת לו ממך.
+  </p>
+
+  <div class="steps">
+    <div class="steps-title">⚡ איך עובד מודל ה-AI של משכנתא נטו?</div>
+    <div class="step"><div class="step-num">1</div><div class="step-txt"><strong>ממלאים פרטים בסיסיים</strong> — לוקח פחות מ-3 דקות</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-txt"><strong>המודל מנתח את ההלוואה</strong> ומזהה כמה פוטנציאל חיסכון יש לכם</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-txt"><strong>פונה לכל הבנקים בו-זמנית</strong> ויוצר תחרות אמיתית על ההלוואה שלכם</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-txt"><strong>מגיש הצעה תוך שעות</strong> — לא שבועות, לא חודשים</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-txt"><strong>יועץ אישי מלווה</strong> עד לרגע שהכסף נחסך בחשבונכם</div></div>
+  </div>
+
+  <!-- INLINE IMAGE 2 -->
+  <div class="inline-img">
+    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&fit=crop" alt="ישיבת ייעוץ פיננסי בישראל">
+    <div class="cap">צוות משכנתא נטו מלווה לקוחות לאורך כל התהליך, מהבדיקה הראשונית עד לחתימה | צילום: Unsplash</div>
+  </div>
+
+  <h2>המספרים שגורמים לאנשים לבכות מרוב שמחה</h2>
+
+  <div class="savings-grid">
+    <div class="sav-card"><div class="sv-num">₪1,500</div><div class="sv-lbl">חיסכון חודשי ממוצע</div></div>
+    <div class="sav-card"><div class="sv-num">₪18,000</div><div class="sv-lbl">חיסכון שנתי ממוצע</div></div>
+    <div class="sav-card"><div class="sv-num">97%</div><div class="sv-lbl">מהלקוחות קיבלו הצעה טובה יותר מהבנק שלהם</div></div>
+  </div>
+
+  <p>
+    "חשבתי שזה מיתוס," סיפרה רחל מ., 42, מרעננה. <strong>"קיבלתי 900 שקל פחות בחודש — ולא עשיתי שום דבר מיוחד. מילאתי טופס."</strong>
+  </p>
+  <p>
+    אמיר ד., 38, מתל אביב: "ידעתי שצריך לבדוק את המשכנתא אחרי הורדת הריבית. חשבתי שזה יהיה סיוט. <strong>תוך שלושה ימים היה לי חיסכון של 1,200 שקל בחודש.</strong> תתחרטו שלא עשיתם את זה מוקדם יותר."
+  </p>
+
+  <div class="highlight">
+    <p>⏰ חלון ההזדמנויות לאחר הורדת ריבית מצטמצם — הבנקים מתאימים את עצמם מהר. מי שממהר עכשיו, נועל ריביות נמוכות לשנים.</p>
+  </div>
+
+  <!-- LEAD FORM -->
+  <div class="lead-form-wrap" id="leadForm">
+    <div class="lf-badge">🔥 בדיקה חינמית — ללא התחייבות</div>
+    <div class="lf-title">כמה תחסכו? גלו עכשיו בחינם</div>
+    <div class="lf-sub">המודל שלנו יחשב תוך דקות כמה אתם יכולים לחסוך — ויציג לכם הצעה אמיתית מהבנקים. ללא עלות. ללא מחויבות.</div>
+    <div class="lf-field"><input type="text" id="lf-name" placeholder="שם מלא" required></div>
+    <div class="lf-field"><input type="tel" id="lf-phone" placeholder="טלפון" required dir="ltr"></div>
+    <div class="lf-field"><input type="text" id="lf-mortgage" placeholder="גובה משכנתא משוער (לא חובה)"></div>
+    <button class="lf-btn" onclick="submitLead()">🚀 בדקו כמה תחסכו — חינם</button>
+    <div class="lf-trust">
+      <span>🔒 פרטים מאובטחים</span>
+      <span>✅ ללא ספאם</span>
+      <span>⚡ מענה תוך שעות</span>
+      <span>🏦 כל הבנקים</span>
+    </div>
+  </div>
+  <div class="lf-success" id="leadSuccess">
+    <h3>✅ קיבלנו! תודה רבה</h3>
+    <p>יועץ ממשכנתא נטו יחזור אליכם בהקדם עם ניתוח ראשוני חינמי</p>
+  </div>
+
+</div><!-- /article -->
+
+<div class="footer">
+  <div style="display:flex;justify-content:center;gap:20px;margin-bottom:8px;flex-wrap:wrap;">
+    <a href="/contact.html">צור קשר</a>
+    <a href="/privacy.html">מדיניות פרטיות</a>
+    <a href="/terms.html">תנאי שימוש</a>
+  </div>
+  תוכן בשיתוף משכנתא נטו &nbsp;|&nbsp; אין באמור ייעוץ פיננסי &nbsp;|&nbsp; © 2026 כלכלה 24
+</div>
+</div><!-- /page -->
+
+<script>
+var WEBHOOK = 'https://script.google.com/macros/s/AKfycbzMx-Dq4v0Ta_jTQBBfL7OBsuzlFuOsbv-jIA_0p4hCx02JOF_ptonlCzp9y1rycE4u/exec';
+
+async function submitLead() {
+  var name = document.getElementById('lf-name').value.trim();
+  var phone = document.getElementById('lf-phone').value.trim();
+  var mortgage = document.getElementById('lf-mortgage').value.trim();
+  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+  var btn = document.querySelector('.lf-btn');
+  btn.disabled = true; btn.textContent = '⏳ שומר פרטים...';
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: mortgage || 'לא צוין', source: 'כתבה - נגיד הוריד (/nagid-horid/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('leadSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
