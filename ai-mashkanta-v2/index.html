@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>החברה הישראלית שמכה את הבנקים במשחק שלהם: AI שחוסך מאות אלפי שקלים | כלכלה 24</title>
+<meta name="description" content="חברת משכנתא נטו פיתחה מודל AI שפונה לכל הבנקים בו-זמנית ומביא הצעה תוך דקות. 97% מהלקוחות חסכו יותר ממה שציפו.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Ads Pixel -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18188063411"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18188063411');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Assistant', sans-serif; background: #f2f2f2; color: #1a1a1a; direction: rtl; font-size: 16px; }
+a { text-decoration: none; color: inherit; }
+
+/* TOP STRIP */
+.top-strip { background: #cc0000; padding: 5px 0; }
+.top-inner { max-width: 980px; margin: 0 auto; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; }
+.top-date { font-size: 12px; color: rgba(255,255,255,0.85); }
+.top-links { display: flex; gap: 16px; }
+.top-links a { font-size: 12px; color: rgba(255,255,255,0.85); }
+.top-links a:hover { color: #fff; }
+
+/* HEADER */
+.site-header { background: #fff; border-bottom: 3px solid #cc0000; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.header-inner { max-width: 980px; margin: 0 auto; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 34px; font-weight: 800; color: #111; letter-spacing: -1px; line-height: 1; }
+.logo span { color: #cc0000; }
+.logo-tagline { font-size: 10px; color: #aaa; letter-spacing: 0.5px; margin-top: 2px; }
+.header-actions { display: flex; gap: 8px; align-items: center; }
+.hdr-btn { font-size: 13px; padding: 7px 16px; border-radius: 4px; font-weight: 600; cursor: pointer; font-family: 'Assistant', sans-serif; border: none; }
+.hdr-btn-outline { background: #fff; color: #333; border: 1.5px solid #ddd; }
+.hdr-btn-red { background: #cc0000; color: #fff; }
+
+/* NAV */
+.nav-bar { background: #fff; border-bottom: 1px solid #e8e8e8; overflow-x: auto; }
+.nav-inner { max-width: 980px; margin: 0 auto; padding: 0 10px; display: flex; }
+.nav-bar a { display: block; padding: 9px 13px; font-size: 14px; color: #333; font-weight: 600; white-space: nowrap; border-bottom: 3px solid transparent; transition: color 0.15s; }
+.nav-bar a:hover { color: #cc0000; }
+.nav-bar a.active { color: #cc0000; border-bottom-color: #cc0000; }
+
+/* TICKER */
+.ticker { background: #fff; border-bottom: 1px solid #e8e8e8; display: flex; align-items: center; overflow: hidden; }
+.ticker-tag { background: #cc0000; color: #fff; font-size: 12px; font-weight: 800; padding: 7px 14px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.5px; }
+.ticker-scroll { flex: 1; overflow: hidden; padding: 0 14px; }
+.ticker-txt { font-size: 13px; color: #222; white-space: nowrap; display: inline-block; animation: scroll-rtl 38s linear infinite; font-weight: 500; }
+@keyframes scroll-rtl { 0%{transform:translateX(-100%)} 100%{transform:translateX(100vw)} }
+
+/* PAGE LAYOUT */
+.page { max-width: 980px; margin: 16px auto; padding: 0 14px; display: grid; grid-template-columns: 1fr 280px; gap: 20px; }
+
+/* ARTICLE */
+.article { background: #fff; border: 1px solid #e8e8e8; border-radius: 2px; }
+.art-cat-bar { padding: 10px 16px 0; display: flex; align-items: center; justify-content: space-between; }
+.art-cat { display: inline-block; font-size: 11px; font-weight: 700; color: #cc0000; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 2px solid #cc0000; padding-bottom: 2px; }
+.art-breaking { background: #cc0000; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 3px; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.65} }
+.art-body { padding: 12px 16px 28px; }
+
+h1 { font-size: 28px; font-weight: 800; line-height: 1.3; color: #111; margin-bottom: 10px; }
+.art-deck { font-size: 17px; color: #555; line-height: 1.65; margin-bottom: 14px; padding-right: 12px; border-right: 3px solid #cc0000; }
+
+.byline { display: flex; align-items: center; gap: 8px; padding: 10px 0; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; margin-bottom: 16px; flex-wrap: wrap; }
+.by-author { font-size: 13px; font-weight: 700; color: #333; }
+.by-sep { color: #ccc; }
+.by-meta { font-size: 12px; color: #999; }
+.share-row { margin-right: auto; display: flex; gap: 6px; }
+.s-btn { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; }
+.s-wa { background: #25d366; }
+.s-fb { background: #1877f2; }
+.s-tw { background: #1da1f2; }
+
+/* IMAGES */
+.hero-img-box { margin: 0 -16px 6px; }
+.hero-img-box img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.img-cap { font-size: 11px; color: #aaa; padding: 5px 16px 12px; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
+.inline-img { margin: 18px 0; border-radius: 4px; overflow: hidden; border: 1px solid #eee; }
+.inline-img img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.inline-img .img-cap { padding: 6px 12px; }
+.two-img { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0; }
+.two-img .inline-img { margin: 0; }
+.two-img .inline-img img { height: 170px; }
+
+p { font-size: 17px; line-height: 1.8; color: #2a2a2a; margin-bottom: 16px; }
+p.intro { font-size: 18px; font-weight: 600; color: #111; }
+h2.section-ttl { font-size: 18px; font-weight: 800; color: #111; margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+
+/* STATS */
+.stats-box { border: 1px solid #e8e8e8; border-radius: 6px; padding: 18px; margin: 20px 0; background: #fafafa; }
+.stats-label { font-size: 11px; font-weight: 700; color: #cc0000; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.stat-cell { text-align: center; padding: 12px 4px; background: #fff; border: 1px solid #eee; border-radius: 4px; }
+.stat-n { font-size: 24px; font-weight: 800; color: #cc0000; line-height: 1; }
+.stat-l { font-size: 11px; color: #777; margin-top: 4px; line-height: 1.4; }
+
+/* PULLQUOTE */
+.pullquote { background: #fff8f0; border-right: 4px solid #ff6600; border-radius: 0 4px 4px 0; padding: 14px 16px; margin: 18px 0; }
+.pullquote blockquote { font-size: 17px; font-weight: 700; color: #7a3a00; font-style: italic; line-height: 1.6; margin-bottom: 6px; }
+.pullquote .pattr { font-size: 12px; color: #aaa; font-style: normal; font-weight: 600; }
+
+/* ALERT BOX */
+.alert-box { background: #fff8e1; border: 1.5px solid #ffe082; border-right: 4px solid #f57c00; border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 18px 0; }
+.alert-box p { margin: 0; font-size: 16px; font-weight: 600; color: #5d3b00; }
+
+/* HIGHLIGHT BOX */
+.hl-box { background: #f0fff4; border: 1.5px solid #a5d6a7; border-right: 4px solid #2e7d32; border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 18px 0; }
+.hl-box p { margin: 0; font-size: 16px; font-weight: 600; color: #1b5e20; }
+
+/* AI STEPS */
+.steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.step { display: flex; gap: 12px; background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 12px 14px; align-items: flex-start; }
+.snum { width: 30px; height: 30px; background: #cc0000; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+.sbody h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; color: #111; }
+.sbody p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+/* SAVINGS BANNER */
+.savings-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid #c8e6c9; border-radius: 6px; overflow: hidden; margin: 20px 0; }
+.sv-cell { text-align: center; padding: 14px 8px; background: #e8f5e9; border-left: 1px solid #c8e6c9; }
+.sv-cell:last-child { border-left: none; }
+.sv-num { font-size: 22px; font-weight: 800; color: #2e7d32; line-height: 1; }
+.sv-lbl { font-size: 11px; color: #555; margin-top: 4px; line-height: 1.4; }
+
+/* PERSON GRID */
+.person-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0; }
+.pcard { border: 1px solid #eee; border-radius: 6px; overflow: hidden; }
+.pcard img { width: 100%; height: 130px; object-fit: cover; display: block; }
+.pcard-info { padding: 10px 12px; }
+.pcard-name { font-size: 13px; font-weight: 800; color: #111; }
+.pcard-detail { font-size: 11px; color: #888; margin-top: 2px; }
+.pcard-save { font-size: 12px; font-weight: 700; color: #2e7d32; margin-top: 5px; }
+.pstars { color: #ffc107; font-size: 12px; margin-top: 3px; }
+
+/* TESTIMONIALS */
+.testis { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.tcard { background: #fff; border: 1px solid #e8e8e8; border-radius: 6px; padding: 14px 16px; border-top: 3px solid #cc0000; }
+.tcard-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tcard-header img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+.tcard-meta { flex: 1; }
+.tname { font-size: 14px; font-weight: 700; color: #222; }
+.tcity { font-size: 12px; color: #999; }
+.tstars { color: #ffc107; font-size: 13px; }
+.ttext { font-size: 15px; color: #444; line-height: 1.65; margin-bottom: 10px; font-style: italic; }
+.tfoot { display: flex; justify-content: space-between; align-items: center; }
+.tsave { font-size: 12px; font-weight: 700; color: #257a39; background: #edfff3; padding: 3px 10px; border-radius: 20px; border: 1px solid #b7f0cb; }
+
+/* LEAD FORM */
+.lead-form { background: #fff5f5; border: 1.5px solid #f5c6c6; border-radius: 8px; padding: 24px 20px; margin: 24px 0; }
+.lead-form h3 { font-size: 22px; font-weight: 800; color: #111; margin-bottom: 6px; }
+.lead-form .fsub { font-size: 14px; color: #666; margin-bottom: 18px; line-height: 1.6; }
+.ffield { margin-bottom: 10px; }
+.ffield input, .ffield select { width: 100%; padding: 13px 14px; border: 1.5px solid #ddd; border-radius: 6px; font-size: 16px; font-family: 'Assistant', sans-serif; background: #fff; color: #111; outline: none; transition: border-color 0.2s; }
+.ffield input:focus, .ffield select:focus { border-color: #cc0000; }
+.ffield input::placeholder { color: #bbb; }
+.fsubmit { width: 100%; padding: 15px; background: #cc0000; color: #fff; border: none; border-radius: 6px; font-size: 19px; font-weight: 800; font-family: 'Assistant', sans-serif; cursor: pointer; transition: background 0.2s; }
+.fsubmit:hover { background: #aa0000; }
+.fdisclaim { font-size: 11px; color: #bbb; text-align: center; margin-top: 9px; line-height: 1.5; }
+.form-ok { display: none; background: #f0fff4; border: 1.5px solid #b7f0cb; border-radius: 8px; padding: 28px 20px; text-align: center; margin: 24px 0; }
+.form-ok h3 { font-size: 20px; font-weight: 800; color: #257a39; margin-bottom: 8px; }
+.form-ok p { font-size: 14px; color: #3a8a50; margin: 0; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.sw { background: #fff; border: 1px solid #e8e8e8; border-radius: 2px; overflow: hidden; }
+.sw-ttl { background: #cc0000; color: #fff; font-size: 13px; font-weight: 700; padding: 8px 12px; letter-spacing: 0.3px; }
+.sw-item { padding: 10px 12px; border-bottom: 1px solid #f5f5f5; display: flex; gap: 8px; }
+.sw-item:last-child { border-bottom: none; }
+.sw-item img { width: 64px; height: 50px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+.sw-txt { font-size: 13px; color: #333; line-height: 1.5; font-weight: 500; }
+.sw-txt:hover { color: #cc0000; }
+
+.sb-alert { background: #fffde7; border: 1.5px solid #ffe082; border-radius: 6px; padding: 14px; text-align: center; }
+.sb-alert-icon { font-size: 28px; margin-bottom: 6px; }
+.sb-alert-txt { font-size: 13px; font-weight: 700; color: #5d4037; line-height: 1.5; margin-bottom: 10px; }
+.sb-alert-btn { display: block; background: #cc0000; color: #fff; padding: 10px; border-radius: 5px; font-size: 14px; font-weight: 700; text-align: center; }
+
+.sb-form { background: #fff5f5; border: 1px solid #f5c6c6; border-radius: 6px; padding: 16px; }
+.sb-form h4 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 12px; line-height: 1.4; }
+.sb-form input { width: 100%; padding: 9px 11px; border: 1.5px solid #ddd; border-radius: 5px; font-size: 14px; font-family: 'Assistant', sans-serif; background: #fff; color: #111; margin-bottom: 8px; outline: none; }
+.sb-form input:focus { border-color: #cc0000; }
+.sb-form input::placeholder { color: #bbb; }
+.sb-form button { width: 100%; padding: 10px; background: #cc0000; color: #fff; border: none; border-radius: 5px; font-size: 15px; font-weight: 700; font-family: 'Assistant', sans-serif; cursor: pointer; }
+.sb-form button:hover { background: #aa0000; }
+
+.sb-calculator { background: #fff; border: 1px solid #e8e8e8; border-radius: 6px; overflow: hidden; }
+.sb-calc-ttl { background: #0d1b2a; color: #fff; font-size: 13px; font-weight: 700; padding: 10px 14px; }
+.sb-calc-body { padding: 14px; }
+.sb-calc-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
+.sb-calc-row:last-child { border-bottom: none; }
+.sb-calc-lbl { color: #777; }
+.sb-calc-val { font-weight: 700; color: #2e7d32; }
+
+/* FOOTER */
+.site-footer { background: #fff; border-top: 3px solid #cc0000; margin-top: 20px; }
+.foot-inner { max-width: 980px; margin: 0 auto; padding: 16px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.foot-logo { font-size: 20px; font-weight: 800; color: #111; }
+.foot-logo span { color: #cc0000; }
+.foot-note { font-size: 11px; color: #aaa; line-height: 1.5; max-width: 600px; }
+.foot-links { display: flex; gap: 16px; }
+.foot-links a { font-size: 12px; color: #cc0000; font-weight: 600; }
+
+@media (max-width: 760px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 22px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .logo { font-size: 26px; }
+  .two-img { grid-template-columns: 1fr; }
+  .person-grid { grid-template-columns: 1fr 1fr; }
+  .savings-row { grid-template-columns: 1fr; }
+  .sv-cell { border-left: none; border-bottom: 1px solid #c8e6c9; }
+  .sv-cell:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <div class="top-inner">
+    <span class="top-date">יום שלישי, 26 במאי 2026</span>
+    <div class="top-links">
+      <a href="#">עברית</a>
+      <a href="#">English</a>
+      <a href="#">פרסמו אצלנו</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="site-header">
+  <div class="header-inner">
+    <div>
+      <a href="/" class="logo">כלכלה<span>24</span></a>
+      <div class="logo-tagline">פורטל הכלכלה של ישראל</div>
+    </div>
+    <div class="header-actions">
+      <a href="#" class="hdr-btn hdr-btn-outline">כניסה</a>
+      <a href="#" class="hdr-btn hdr-btn-red">הרשמה חינם</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="#">חדשות</a>
+    <a href="#">כלכלה</a>
+    <a href="#">שוק ההון</a>
+    <a href="#">נדל"ן</a>
+    <a href="#">קריירה</a>
+    <a href="#">צרכנות</a>
+    <a href="#">דעות</a>
+    <a href="#" class="active">טכנולוגיה</a>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-tag">מבזק ◆</div>
+  <div class="ticker-scroll">
+    <span class="ticker-txt">◆ מודל AI ישראלי חוסך ללקוחות מאות מיליוני שקלים על משכנתאות &nbsp;&nbsp;&nbsp; ◆ 97% מהלקוחות קיבלו הצעה טובה יותר מהבנק שלהם &nbsp;&nbsp;&nbsp; ◆ פנייה ל-12 בנקים בו-זמנית — תוך 3 דקות &nbsp;&nbsp;&nbsp; ◆ ישראלים חוסכים בממוצע 320,000 ש"ח לאורך חיי המשכנתא &nbsp;&nbsp;&nbsp; ◆ בדיקת התאמה ראשונית — חינם, ללא התחייבות</span>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- MAIN -->
+  <main>
+    <div class="article">
+      <div class="art-cat-bar">
+        <span class="art-cat">טכנולוגיה פיננסית | בלעדי</span>
+        <span class="art-breaking">🔴 בלעדי</span>
+      </div>
+      <div class="art-body">
+
+        <h1>החברה הישראלית שגורמת לבנקים לחשוש: AI שחוסך מאות אלפי שקלים על משכנתא — ומביא הצעה תוך דקות</h1>
+        <div class="art-deck">משכנתא נטו פיתחה מודל AI שעושה מה שלבנקים הכי לא נוח: פונה לכולם בו-זמנית, מנהל מו"מ אוטומטי, ומחזיר הצעה ריאלית תוך דקות. הלקוחות חוסכים בממוצע 320,000 שקל לאורך חיי ההלוואה</div>
+
+        <div class="byline">
+          <span class="by-author">אורן לוי</span>
+          <span class="by-sep">|</span>
+          <span class="by-meta">כתב כלכלה ופיננסים</span>
+          <span class="by-sep">|</span>
+          <span class="by-meta">26.5.2026</span>
+          <span class="by-sep">|</span>
+          <span class="by-meta">5 דקות קריאה</span>
+          <span class="by-sep">|</span>
+          <span class="by-meta">8,340 קוראים</span>
+          <div class="share-row">
+            <a href="#" class="s-btn s-wa">W</a>
+            <a href="#" class="s-btn s-fb">f</a>
+            <a href="#" class="s-btn s-tw">t</a>
+          </div>
+        </div>
+
+        <!-- HERO IMAGE -->
+        <div class="hero-img-box">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=85&fit=crop" alt="משכנתא AI ישראל">
+        </div>
+        <div class="img-cap">החברה שמאלצת את הבנקים להתחרות — ומביאה ללקוחות הצעות שלא ידעו שאפשריות (צילום: אילוסטרציה)</div>
+
+        <p class="intro">כשיעל ורון כהן מחיפה החליטו לקחת משכנתא, הם עשו מה שכולם עושים: הלכו לבנק שלהם. הבנקאי חייך, הגיש קפה, והציע להם ריבית "מעולה" לפי דבריו. הם חתמו.</p>
+
+        <p>שלושה חודשים אחר כך, חבר שלח להם קישור למשכנתא נטו. <strong>"הבנת כמה שילמנו יותר מדי?" שאלה יעל. "רון לא דיבר איתי שלושה ימים מרוב עצבים."</strong> ההפרש: 1,400 שקל בחודש. לאורך 25 שנה — זה מעל 400,000 שקל.</p>
+
+        <!-- STATS -->
+        <div class="stats-box">
+          <div class="stats-label">המספרים שהבנקים לא רוצים שתראו</div>
+          <div class="stats-row">
+            <div class="stat-cell"><div class="stat-n">₪320K</div><div class="stat-l">חיסכון ממוצע לאורך חיי המשכנתא</div></div>
+            <div class="stat-cell"><div class="stat-n">97%</div><div class="stat-l">קיבלו הצעה טובה יותר מהבנק שלהם</div></div>
+            <div class="stat-cell"><div class="stat-n">3 דק'</div><div class="stat-l">זמן ממוצע לקבלת הצעה ראשונית</div></div>
+            <div class="stat-cell"><div class="stat-n">12+</div><div class="stat-l">בנקים ומלווים בו-זמנית</div></div>
+          </div>
+        </div>
+
+        <!-- INLINE IMAGE -->
+        <div class="inline-img">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop" alt="זוג ישראלי בוחן משכנתא">
+          <div class="img-cap">יעל ורון לא ידעו כמה שילמו יותר מדי — עד שגילו. "400,000 שקל זה לא סכום קטן" (צילום: אילוסטרציה)</div>
+        </div>
+
+        <h2 class="section-ttl">מה הבנק לא רוצה שתדעו</h2>
+
+        <p>לקיחת משכנתא היא העסקה הכלכלית הגדולה ביותר בחיי רוב הישראלים. ובכל זאת, רובנו עושים אותה לאחר פגישה אחת — עם הבנק שלנו. הבנק שמוציא עלינו כבר שנים. הבנק שיודע שאנחנו כנראה לא נטרח לבדוק אלטרנטיבות.</p>
+        <p><strong>זו לא עצלנות — זה תכנון שיטתי.</strong> הליך לקיחת משכנתא מול בנקים שונים לקח בעבר שבועות: מסמכים, פגישות, המתנות, אי-ודאות. רוב האנשים פשוט לא עשו את זה. הבנקים ידעו את זה. וגבו בהתאם.</p>
+
+        <div class="pullquote">
+          <blockquote>"כל שנה, מיליארדי שקלים עוברים מהכיסים של בעלי הדירות הישראלים ישירות לרווחי הבנקים — בגלל ריביות שניתן היה להוריד. זה לא גזירה משמיים. זה כסף שמגיע לכם."</blockquote>
+          <div class="pattr">— יניב שרון, מייסד משכנתא נטו</div>
+        </div>
+
+        <!-- TWO IMAGES -->
+        <div class="two-img">
+          <div class="inline-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&fit=crop" alt="יועץ משכנתא ישראלי">
+            <div class="img-cap">יניב שרון, מייסד משכנתא נטו (צילום: אילוסטרציה)</div>
+          </div>
+          <div class="inline-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop" alt="לקוחה ישראלית מרוצה">
+            <div class="img-cap">לקוחות מדווחים על חיסכון ממוצע של אלפי שקלים בחודש (צילום: אילוסטרציה)</div>
+          </div>
+        </div>
+
+        <h2 class="section-ttl">המכונה שמנהלת מו"מ טוב יותר מכל אדם</h2>
+
+        <p>משכנתא נטו פיתחה בשנתיים האחרונות מודל AI שעושה דבר אחד — אבל עושה אותו טוב יותר מכל מתווך אנושי: מנהל מו"מ מול כל הבנקים בו-זמנית, מזהה את נקודות החולשה של כל הצעה, ומחזיר הצעה אופטימלית תוך דקות.</p>
+        <p><strong>לא צריך לצאת מהבית. לא צריך לחכות בתור.</strong> ממלאים טופס קצר — והמודל עושה את כל העבודה.</p>
+
+        <div class="steps">
+          <div class="step"><div class="snum">1</div><div class="sbody"><h4>ממלאים פרטים בסיסיים — 3 דקות</h4><p>שם, טלפון וגובה המשכנתא המבוקשת. לא יותר מזה בשלב הראשון.</p></div></div>
+          <div class="step"><div class="snum">2</div><div class="sbody"><h4>AI מנתח את הפרופיל הפיננסי שלכם</h4><p>המודל מחשב את הריבית הטובה ביותר שתוכלו לקבל בשוק הנוכחי עבור הפרופיל שלכם.</p></div></div>
+          <div class="step"><div class="snum">3</div><div class="sbody"><h4>פנייה אוטומטית ל-12+ בנקים בו-זמנית</h4><p>כולם מתחרים על ההלוואה שלכם — ולא מודעים לכך שיש תחרות. זה היתרון.</p></div></div>
+          <div class="step"><div class="snum">4</div><div class="sbody"><h4>המערכת מנהלת מו"מ אוטומטי</h4><p>מחזירה את ההצעה הטובה ביותר תוך שעות — לא שבועות. לא צריך לצאת מהבית.</p></div></div>
+          <div class="step"><div class="snum">5</div><div class="sbody"><h4>יועץ אנושי מלווה עד לחתימה</h4><p>מומחה אישי מנהל מו"מ סופי ומבטיח את הריבית הטובה ביותר — ללא עלויות נסתרות.</p></div></div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="inline-img">
+          <img src="https://images.unsplash.com/photo-1484712401471-05c7215830eb?w=800&q=80&fit=crop" alt="משפחה ישראלית בדירה חדשה">
+          <div class="img-cap">עשרות אלפי משפחות ישראליות כבר חסכו בעזרת המערכת (צילום: אילוסטרציה)</div>
+        </div>
+
+        <h2 class="section-ttl">המספרים שקשה להאמין — עד שרואים אותם</h2>
+
+        <div class="savings-row">
+          <div class="sv-cell"><div class="sv-num">₪320,000</div><div class="sv-lbl">חיסכון ממוצע לאורך חיי המשכנתא</div></div>
+          <div class="sv-cell"><div class="sv-num">₪1,500</div><div class="sv-lbl">חיסכון חודשי ממוצע</div></div>
+          <div class="sv-cell"><div class="sv-num">3 דק'</div><div class="sv-lbl">עד קבלת הצעה ראשונית</div></div>
+        </div>
+
+        <p>אלו לא מספרים שיווקיים. אלו ממוצעים מתוך אלפי עסקאות שבוצעו דרך המערכת. <strong>חלק מהלקוחות חסכו אף יותר — עד 500,000 שקל</strong> לאורך חיי המשכנתא, בעיקר אלה שהגיעו עם משכנתאות גדולות שנלקחו בתקופת ריביות גבוהות.</p>
+
+        <div class="hl-box">
+          <p>💡 לפי נתוני הבנק של ישראל, 78% מהמשכנתאות הפעילות בישראל נלקחו בריביות גבוהות מהאופטימלי. כלומר — הסיכוי שגם אתם משלמים יותר מדי הוא גבוה מאוד.</p>
+        </div>
+
+        <h2 class="section-ttl">הם לא ציפו לזה — עד שקיבלו את ההצעה</h2>
+
+        <!-- PERSON GRID -->
+        <div class="person-grid">
+          <div class="pcard">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&q=80&fit=crop&crop=face" alt="דני מ.">
+            <div class="pcard-info">
+              <div class="pcard-name">דני מ., 41</div>
+              <div class="pcard-detail">תל אביב | משכנתא 1.6M ₪</div>
+              <div class="pstars">★★★★★</div>
+              <div class="pcard-save">חסך: ₪1,350/חודש</div>
+            </div>
+          </div>
+          <div class="pcard">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80&fit=crop&crop=face" alt="מיכל ש.">
+            <div class="pcard-info">
+              <div class="pcard-name">מיכל ש., 36</div>
+              <div class="pcard-detail">חיפה | משכנתא 980K ₪</div>
+              <div class="pstars">★★★★★</div>
+              <div class="pcard-save">חסכה: ₪890/חודש</div>
+            </div>
+          </div>
+          <div class="pcard">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80&fit=crop&crop=face" alt="אמיר ד.">
+            <div class="pcard-info">
+              <div class="pcard-name">אמיר ד., 44</div>
+              <div class="pcard-detail">ראשל"צ | משכנתא 2.1M ₪</div>
+              <div class="pstars">★★★★★</div>
+              <div class="pcard-save">חסך: ₪1,800/חודש</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testis">
+          <div class="tcard">
+            <div class="tcard-header">
+              <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=100&q=80&fit=crop&crop=face" alt="רחל">
+              <div class="tcard-meta">
+                <div class="tname">רחל א., רעננה</div>
+                <div class="tcity">משכנתא 1.3M ₪ | גיל: 38</div>
+                <div class="tstars">★★★★★</div>
+              </div>
+            </div>
+            <div class="ttext">"לא האמנתי שזה אפשרי. תוך 4 דקות קיבלתי הצעה שהבנקאי שלי אמר לי שהיא בלתי אפשרית. בסוף חתמתי על ריבית נמוכה ב-0.8% ממה שהבנק שלי הציע. זה כסף שאני מרגישה אותו בחשבון כל חודש."</div>
+            <div class="tfoot"><span class="tname">רחל א., רעננה</span><span class="tsave">✅ חסכה ₪1,100/חודש | ₪330,000 סה"כ</span></div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-header">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&fit=crop&crop=face" alt="יוסי">
+              <div class="tcard-meta">
+                <div class="tname">יוסי ו., נתניה</div>
+                <div class="tcity">משכנתא 2.4M ₪ | גיל: 47</div>
+                <div class="tstars">★★★★★</div>
+              </div>
+            </div>
+            <div class="ttext">"אני רואה חשבון. חשבתי שאני יודע הכל על פיננסים. אבל מה שהמערכת עשתה תוך כמה דקות — לקח לי שבועות לנסות לעשות לבד. הם מצאו לי הצעה שחסכה לי 1,900 שקל בחודש."</div>
+            <div class="tfoot"><span class="tname">יוסי ו., נתניה</span><span class="tsave">✅ חסך ₪1,900/חודש | ₪570,000 סה"כ</span></div>
+          </div>
+        </div>
+
+        <!-- BOTTOM IMAGE -->
+        <div class="inline-img">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&fit=crop" alt="לחיצת יד עסקה טובה">
+          <div class="img-cap">הרגע שבו ההצעה של משכנתא נטו מנצחת את הבנק — שוב ושוב (צילום: אילוסטרציה)</div>
+        </div>
+
+        <div class="alert-box">
+          <p>⚡ כמה אתם יכולים לחסוך? הדרך היחידה לדעת — לבדוק. הבדיקה חינמית, לוקחת 3 דקות, ואינה מחייבת לשום דבר.</p>
+        </div>
+
+        <!-- LEAD FORM -->
+        <div class="lead-form" id="leadForm">
+          <h3>🚀 קבלו הצעה מהבנקים — תוך 3 דקות, חינם</h3>
+          <div class="fsub">השאירו פרטים ומומחה ממשכנתא נטו יחזור אליכם עם ניתוח ראשוני מלא — ללא עלות, ללא מחויבות, ללא עיכובים</div>
+          <div class="ffield"><input type="text" id="lf-name" placeholder="שם מלא" required></div>
+          <div class="ffield"><input type="tel" id="lf-phone" placeholder="מספר טלפון" required dir="ltr"></div>
+          <div class="ffield">
+            <select id="lf-amount">
+              <option value="">גובה משכנתא מבוקשת / קיימת (לא חובה)</option>
+              <option>עד 500,000 ₪</option>
+              <option>500,000 – 1,000,000 ₪</option>
+              <option>1,000,000 – 1,500,000 ₪</option>
+              <option>1,500,000 – 2,000,000 ₪</option>
+              <option>מעל 2,000,000 ₪</option>
+            </select>
+          </div>
+          <button class="fsubmit" onclick="submitLead()">⚡ השאירו פרטים — קבלו הצעה חינם ←</button>
+          <div class="fdisclaim">🔒 פרטיכם לא יועברו לצד שלישי &nbsp;|&nbsp; ללא ספאם &nbsp;|&nbsp; תגובה תוך שעות</div>
+        </div>
+        <div class="form-ok" id="leadSuccess">
+          <h3>✅ מעולה! קיבלנו את הפרטים</h3>
+          <p>יועץ ממשכנתא נטו יחזור אליכם בהקדם עם ניתוח ראשוני מלא — חינם, ללא התחייבות</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- URGENT ALERT -->
+    <div class="sb-alert">
+      <div class="sb-alert-icon">🤖</div>
+      <div class="sb-alert-txt">מודל AI חדש מביא הצעת משכנתא מ-12 בנקים תוך דקות — חינם וללא התחייבות</div>
+      <a href="#leadForm" class="sb-alert-btn">נסו עכשיו — חינם</a>
+    </div>
+
+    <!-- SIDEBAR QUICK FORM -->
+    <div class="sb-form">
+      <h4>קבלו הצעה תוך שעות — חינם ללא התחייבות</h4>
+      <input type="text" id="sb-name" placeholder="שם מלא">
+      <input type="tel" id="sb-phone" placeholder="טלפון" dir="ltr">
+      <button onclick="submitSidebar()">לקבלת הצעה ←</button>
+    </div>
+
+    <!-- SAVINGS CALC -->
+    <div class="sb-calculator">
+      <div class="sb-calc-ttl">📊 חיסכון פוטנציאלי לפי סכום</div>
+      <div class="sb-calc-body">
+        <div class="sb-calc-row"><span class="sb-calc-lbl">משכנתא 800K ₪</span><span class="sb-calc-val">עד ₪700/חודש</span></div>
+        <div class="sb-calc-row"><span class="sb-calc-lbl">משכנתא 1.2M ₪</span><span class="sb-calc-val">עד ₪1,050/חודש</span></div>
+        <div class="sb-calc-row"><span class="sb-calc-lbl">משכנתא 1.6M ₪</span><span class="sb-calc-val">עד ₪1,400/חודש</span></div>
+        <div class="sb-calc-row"><span class="sb-calc-lbl">משכנתא 2M+ ₪</span><span class="sb-calc-val">עד ₪1,800/חודש</span></div>
+      </div>
+    </div>
+
+    <!-- TRENDING -->
+    <div class="sw">
+      <div class="sw-ttl">📰 כתבות פופולריות</div>
+      <div class="sw-item">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&q=60&fit=crop" alt="">
+        <a href="/nagid-horid/" class="sw-txt">הנגיד הוריד — כך תחסכו אלפי שקלים בלי לצאת מהבית</a>
+      </div>
+      <div class="sw-item">
+        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=200&q=60&fit=crop" alt="">
+        <a href="/nagid-v2/" class="sw-txt">לאחר הורדת הריבית — כל חודש שאתם ממתינים עולה לכם כסף</a>
+      </div>
+      <div class="sw-item">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&q=60&fit=crop" alt="">
+        <a href="/lp1/" class="sw-txt">97% מבודקי המשכנתא קיבלו הצעה טובה יותר מהבנק שלהם</a>
+      </div>
+      <div class="sw-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=60&fit=crop" alt="">
+        <a href="/lp2/" class="sw-txt">פיצחנו את שיטת לקיחת המשכנתא — חיסכון של עד מאות אלפים</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<div class="site-footer">
+  <div class="foot-inner">
+    <div class="foot-logo">כלכלה<span>24</span></div>
+    <div class="foot-note">תוכן בשיתוף משכנתא נטו | אין באמור ייעוץ פיננסי | © 2026 כל הזכויות שמורות</div>
+    <div class="foot-links">
+      <a href="/contact.html">צור קשר</a>
+      <a href="/privacy.html">פרטיות</a>
+      <a href="/terms.html">תנאי שימוש</a>
+    </div>
+  </div>
+</div>
+
+<script>
+var WEBHOOK = 'https://script.google.com/macros/s/AKfycbzMx-Dq4v0Ta_jTQBBfL7OBsuzlFuOsbv-jIA_0p4hCx02JOF_ptonlCzp9y1rycE4u/exec';
+
+async function submitLead() {
+  var name = document.getElementById('lf-name').value.trim();
+  var phone = document.getElementById('lf-phone').value.trim();
+  var amount = document.getElementById('lf-amount').value;
+  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+  var btn = document.querySelector('.fsubmit');
+  btn.disabled = true; btn.textContent = '⏳ שומר פרטים...';
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: amount || 'לא צוין', source: 'כתבה AI V2 (/ai-mashkanta-v2/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('leadSuccess').style.display = 'block';
+}
+
+async function submitSidebar() {
+  var name = document.getElementById('sb-name').value.trim();
+  var phone = document.getElementById('sb-phone').value.trim();
+  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+  try {
+    var params = new URLSearchParams({ name: name, phone: phone, size: 'sidebar', source: 'כתבה AI V2 Sidebar (/ai-mashkanta-v2/)' });
+    await fetch(WEBHOOK + '?' + params);
+  } catch(e) {}
+  gtag('event', 'conversion', {'send_to': 'AW-18188063411/KrpICIS-krMcELOl3-BD'});
+  alert('תודה! ניצור קשר בהקדם.');
+}
+</script>
+</body>
+</html>
